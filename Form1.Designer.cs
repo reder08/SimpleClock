@@ -32,15 +32,15 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.cmbMin = new System.Windows.Forms.ComboBox();
+            this.cmbHour = new System.Windows.Forms.ComboBox();
+            this.txtWeekDay = new System.Windows.Forms.TextBox();
+            this.txtDate = new System.Windows.Forms.TextBox();
+            this.txtTime = new System.Windows.Forms.TextBox();
+            this.btnCancelAlert = new System.Windows.Forms.Button();
+            this.btnSetAlert = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.btnSetAlert = new System.Windows.Forms.Button();
-            this.btnCancelAlert = new System.Windows.Forms.Button();
-            this.txtTime = new System.Windows.Forms.TextBox();
-            this.txtDate = new System.Windows.Forms.TextBox();
-            this.txtWeekDay = new System.Windows.Forms.TextBox();
-            this.cmbHour = new System.Windows.Forms.ComboBox();
-            this.cmbMin = new System.Windows.Forms.ComboBox();
             this.timerClcok = new System.Windows.Forms.Timer(this.components);
             this.timerAlert = new System.Windows.Forms.Timer(this.components);
             this.tabControl1.SuspendLayout();
@@ -77,35 +77,54 @@
             this.tabPage1.Text = "時鐘";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // tabPage2
+            // cmbMin
             // 
-            this.tabPage2.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.tabPage2.Location = new System.Drawing.Point(4, 25);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(718, 360);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "碼表";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.cmbMin.FormattingEnabled = true;
+            this.cmbMin.Location = new System.Drawing.Point(210, 240);
+            this.cmbMin.Name = "cmbMin";
+            this.cmbMin.Size = new System.Drawing.Size(163, 23);
+            this.cmbMin.TabIndex = 6;
             // 
-            // tabPage3
+            // cmbHour
             // 
-            this.tabPage3.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.tabPage3.Location = new System.Drawing.Point(4, 25);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(718, 360);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "倒數";
-            this.tabPage3.UseVisualStyleBackColor = true;
+            this.cmbHour.FormattingEnabled = true;
+            this.cmbHour.Location = new System.Drawing.Point(27, 240);
+            this.cmbHour.Name = "cmbHour";
+            this.cmbHour.Size = new System.Drawing.Size(177, 23);
+            this.cmbHour.TabIndex = 5;
             // 
-            // btnSetAlert
+            // txtWeekDay
             // 
-            this.btnSetAlert.Location = new System.Drawing.Point(438, 240);
-            this.btnSetAlert.Name = "btnSetAlert";
-            this.btnSetAlert.Size = new System.Drawing.Size(125, 30);
-            this.btnSetAlert.TabIndex = 0;
-            this.btnSetAlert.Text = "啟動鬧鐘";
-            this.btnSetAlert.UseVisualStyleBackColor = true;
+            this.txtWeekDay.Enabled = false;
+            this.txtWeekDay.Font = new System.Drawing.Font("微軟正黑體", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.txtWeekDay.Location = new System.Drawing.Point(397, 134);
+            this.txtWeekDay.Multiline = true;
+            this.txtWeekDay.Name = "txtWeekDay";
+            this.txtWeekDay.Size = new System.Drawing.Size(350, 86);
+            this.txtWeekDay.TabIndex = 4;
+            this.txtWeekDay.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtDate
+            // 
+            this.txtDate.Enabled = false;
+            this.txtDate.Font = new System.Drawing.Font("微軟正黑體", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.txtDate.Location = new System.Drawing.Point(27, 134);
+            this.txtDate.Multiline = true;
+            this.txtDate.Name = "txtDate";
+            this.txtDate.Size = new System.Drawing.Size(346, 84);
+            this.txtDate.TabIndex = 3;
+            this.txtDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtTime
+            // 
+            this.txtTime.Enabled = false;
+            this.txtTime.Font = new System.Drawing.Font("微軟正黑體", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.txtTime.Location = new System.Drawing.Point(22, 15);
+            this.txtTime.Multiline = true;
+            this.txtTime.Name = "txtTime";
+            this.txtTime.Size = new System.Drawing.Size(725, 111);
+            this.txtTime.TabIndex = 2;
+            this.txtTime.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // btnCancelAlert
             // 
@@ -116,54 +135,35 @@
             this.btnCancelAlert.Text = "關閉鬧鐘";
             this.btnCancelAlert.UseVisualStyleBackColor = true;
             // 
-            // txtTime
+            // btnSetAlert
             // 
-            this.txtTime.Enabled = false;
-            this.txtTime.Font = new System.Drawing.Font("新細明體", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.txtTime.Location = new System.Drawing.Point(22, 15);
-            this.txtTime.Multiline = true;
-            this.txtTime.Name = "txtTime";
-            this.txtTime.Size = new System.Drawing.Size(725, 111);
-            this.txtTime.TabIndex = 2;
-            this.txtTime.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnSetAlert.Location = new System.Drawing.Point(438, 240);
+            this.btnSetAlert.Name = "btnSetAlert";
+            this.btnSetAlert.Size = new System.Drawing.Size(125, 30);
+            this.btnSetAlert.TabIndex = 0;
+            this.btnSetAlert.Text = "啟動鬧鐘";
+            this.btnSetAlert.UseVisualStyleBackColor = true;
             // 
-            // txtDate
+            // tabPage2
             // 
-            this.txtDate.Enabled = false;
-            this.txtDate.Font = new System.Drawing.Font("新細明體", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.txtDate.Location = new System.Drawing.Point(27, 134);
-            this.txtDate.Multiline = true;
-            this.txtDate.Name = "txtDate";
-            this.txtDate.Size = new System.Drawing.Size(346, 84);
-            this.txtDate.TabIndex = 3;
-            this.txtDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tabPage2.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.tabPage2.Location = new System.Drawing.Point(4, 43);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(778, 379);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "碼表";
+            this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // txtWeekDay
+            // tabPage3
             // 
-            this.txtWeekDay.Enabled = false;
-            this.txtWeekDay.Font = new System.Drawing.Font("新細明體", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.txtWeekDay.Location = new System.Drawing.Point(422, 132);
-            this.txtWeekDay.Multiline = true;
-            this.txtWeekDay.Name = "txtWeekDay";
-            this.txtWeekDay.Size = new System.Drawing.Size(350, 86);
-            this.txtWeekDay.TabIndex = 4;
-            this.txtWeekDay.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // cmbHour
-            // 
-            this.cmbHour.FormattingEnabled = true;
-            this.cmbHour.Location = new System.Drawing.Point(27, 240);
-            this.cmbHour.Name = "cmbHour";
-            this.cmbHour.Size = new System.Drawing.Size(177, 23);
-            this.cmbHour.TabIndex = 5;
-            // 
-            // cmbMin
-            // 
-            this.cmbMin.FormattingEnabled = true;
-            this.cmbMin.Location = new System.Drawing.Point(210, 240);
-            this.cmbMin.Name = "cmbMin";
-            this.cmbMin.Size = new System.Drawing.Size(163, 23);
-            this.cmbMin.TabIndex = 6;
+            this.tabPage3.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.tabPage3.Location = new System.Drawing.Point(4, 43);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Size = new System.Drawing.Size(778, 379);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "倒數";
+            this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // timerClcok
             // 
