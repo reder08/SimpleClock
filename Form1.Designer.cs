@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.txtDate = new System.Windows.Forms.TextBox();
             this.cmbMin = new System.Windows.Forms.ComboBox();
             this.cmbHour = new System.Windows.Forms.ComboBox();
             this.txtWeekDay = new System.Windows.Forms.TextBox();
@@ -42,7 +43,6 @@
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.timerClcok = new System.Windows.Forms.Timer(this.components);
             this.timerAlert = new System.Windows.Forms.Timer(this.components);
-            this.txtDate = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.SuspendLayout();
@@ -76,6 +76,18 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "時鐘";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // txtDate
+            // 
+            this.txtDate.Enabled = false;
+            this.txtDate.Font = new System.Drawing.Font("微軟正黑體", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.txtDate.Location = new System.Drawing.Point(22, 132);
+            this.txtDate.Multiline = true;
+            this.txtDate.Name = "txtDate";
+            this.txtDate.Size = new System.Drawing.Size(350, 86);
+            this.txtDate.TabIndex = 7;
+            this.txtDate.Text = "123";
+            this.txtDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // cmbMin
             // 
@@ -125,6 +137,7 @@
             this.btnCancelAlert.TabIndex = 1;
             this.btnCancelAlert.Text = "關閉鬧鐘";
             this.btnCancelAlert.UseVisualStyleBackColor = true;
+            this.btnCancelAlert.Click += new System.EventHandler(this.btnCancelAlert_Click);
             // 
             // btnSetAlert
             // 
@@ -135,6 +148,7 @@
             this.btnSetAlert.TabIndex = 0;
             this.btnSetAlert.Text = "啟動鬧鐘";
             this.btnSetAlert.UseVisualStyleBackColor = true;
+            this.btnSetAlert.Click += new System.EventHandler(this.btnSetAlert_Click);
             // 
             // tabPage2
             // 
@@ -165,18 +179,6 @@
             // 
             this.timerAlert.Tick += new System.EventHandler(this.timerAlert_Tick);
             // 
-            // txtDate
-            // 
-            this.txtDate.Enabled = false;
-            this.txtDate.Font = new System.Drawing.Font("微軟正黑體", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.txtDate.Location = new System.Drawing.Point(22, 132);
-            this.txtDate.Multiline = true;
-            this.txtDate.Name = "txtDate";
-            this.txtDate.Size = new System.Drawing.Size(350, 86);
-            this.txtDate.TabIndex = 7;
-            this.txtDate.Text = "123";
-            this.txtDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -186,7 +188,6 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "簡單時鐘";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
