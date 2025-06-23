@@ -253,7 +253,6 @@
             this.listStopWatchLog.Name = "listStopWatchLog";
             this.listStopWatchLog.Size = new System.Drawing.Size(271, 259);
             this.listStopWatchLog.TabIndex = 0;
-            this.listStopWatchLog.SelectedIndexChanged += new System.EventHandler(this.timerStopWatch_tick);
             // 
             // tabPage3
             // 
@@ -276,6 +275,7 @@
             // timerStopWatch
             // 
             this.timerStopWatch.Interval = 1;
+            this.timerStopWatch.Tick += new System.EventHandler(this.timerStopWatch_Tick);
             // 
             // Form1
             // 

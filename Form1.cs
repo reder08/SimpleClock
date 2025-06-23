@@ -32,8 +32,7 @@ namespace SimpleClock
         private WaveOutEvent waveOut;                       // 音效檔播放器
         private AudioFileReader audioFileReader;            // 音效檔讀取器
 
-        List<string> StopWatchLog = new List<string>();         // 碼表紀錄清單 
-        Stopwatch sw = new Stopwatch();                         // 宣告一個碼表物件
+      
 
         // 下拉選單初始化
         private void comboboxInitialzation()
@@ -120,20 +119,21 @@ namespace SimpleClock
             btnCancelAlert.Enabled = false;
         }
 
+        List<string> StopWatchLog = new List<string>();         // 碼表紀錄清單 
+        Stopwatch sw = new Stopwatch();                         // 宣告一個碼表物件
+
         // timerStopWatch_tick：每毫秒執行一次，所以更新的速度會比較快
-        private void timerStopWatch_tick(object sender, EventArgs e)
+        private void timerStopWatch_Tick(object sender, EventArgs e)
         {
             txtStopWatch.Text = sw.Elapsed.ToString("hh':'mm':'ss':'fff");    // 顯示碼表時間
         }
 
-        // 啟動碼表
         private void btnStart_Click(object sender, EventArgs e)
         {
             sw.Start();             // 啟動碼表
             timerStopWatch.Start(); // 開始讓碼表文字顯示
         }
 
-        // 停止並歸零碼表
         private void btnStop_Click(object sender, EventArgs e)
         {
             sw.Reset();                           // 停止並歸零碼表
@@ -143,7 +143,6 @@ namespace SimpleClock
             StopWatchLog.Clear();                 // 清除暫存碼表紀錄清單
         }
 
-        // 歸零按鍵會判斷你是否先按下暫停？來決定是否記錄碼表時間
         private void btnReset_Click(object sender, EventArgs e)
         {
             // 如果碼表還在跑，就紀錄目前的時間，最後歸零再啟動碼錶
@@ -159,20 +158,16 @@ namespace SimpleClock
             }
         }
 
-        // 停止碼表
         private void btnPause_Click(object sender, EventArgs e)
         {
             sw.Stop();                  // 停止碼表，但不歸零
             timerStopWatch.Stop();      // 停止讓碼表文字顯示  
         }
 
-        // 碼表時間紀錄
         private void btnLog_Click(object sender, EventArgs e)
         {
             logRecord();
         }
-
-        // 碼表時間紀錄
         private void logRecord()
         {
             listStopWatchLog.Items.Clear(); // 清空 ListBox 中的元素
